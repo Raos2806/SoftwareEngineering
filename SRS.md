@@ -1,4 +1,4 @@
-# Common Playground - Software Requirements Specification 
+# Ultimate Recipe Hunter - Software Requirements Specification 
 
 ## Table of contents
 - [Table of contents](#table-of-contents)
@@ -70,27 +70,22 @@ The following chapter provides an overview of this project with our motivation a
 ## 2. Overall Description
 
 ### 2.1 Motivation
-None of the members of our team have 
+None of the members of our team have any major programming experience yet. That is why we decided to create an Android app. To get started we want to develop a basic jump'n'run game which is also expandable.
+
 ### 2.2 Use Case Diagram
 
-![OUCD](./UseCaseDiagramCP.png)
-
-- Green: Planned till end of december
-- Yellow: Planned till end of june
 
 ### 2.3 Technology Stack
 The technology we use is:
 
 Backend:
--Gradle and Springboot
--H2 Database
+-Godot Engine
 
 Frontend:
--Android with Java and XML
+-Android
 
 IDE:
--IntelliJ and Android Studio
-
+-Godot Language
 Project Management:
 -YouTrack
 -GitHub
