@@ -171,7 +171,7 @@ The User interfaces that will be implented are:
 (n/a)
 
 #### 3.9.3 Software Interfaces
-The app will be runnable on Android 4.4 and Windows OS.
+The app will be runnable on Android and Windows OS.
 
 #### 3.9.4 Communication Interfaces
 (n/a)
