@@ -73,7 +73,7 @@ The following chapter provides an overview of this project with our motivation a
 None of the members of our team have any major programming experience yet. That is why we decided to create an Android app. To get started we want to develop a basic jump'n'run game which is also expandable.
 
 ### 2.2 Use Case Diagram
-![OUCD] (./Pictures/UseCaseDiagramm.png)
+![OUCD](./Pictures/UseCaseDiagramm.png)
 
 ### 2.3 Technology Stack
 The technology we use is:
