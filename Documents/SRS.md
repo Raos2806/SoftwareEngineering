@@ -110,7 +110,7 @@ Until December we plan to implement:
 #### 3.1.1 Play the game
 This feature is the most essential one of our project. The user can freely move his character through the levels, each containing different obstacles.
 
-[Play the game](./use_cases/play_the_game.md)
+[Play the game](./use_cases/UC1_play_the_game.md)
 
 #### 3.1.2 Save the game
 Save the progress you made in the game. Will automatically happen after completing a level.
