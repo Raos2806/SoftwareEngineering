@@ -33,7 +33,7 @@ n/a
 
 ## 2. Flow of Events - Design
 
-![UCRS](./Pictures/sequencediagram1.drawio.png)
+![UCRS](../Pictures/sequencediagram1.drawio.png)
 
 As seen in the above sequence diagram, the first step is to launch the application on your device.
 The main menu screen will contain buttons to navigate through the app. By tapping the play button, the user will be able to enter the level selection.
