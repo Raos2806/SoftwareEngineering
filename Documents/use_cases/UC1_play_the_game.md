@@ -27,7 +27,7 @@ tbd
 
 ## 2.2 Alternative Flows
 - User tries to perform actions prohibited by the game (e.g. walk through walls)
-- 
+
 # 3. Special Requirements
 n/a
 
