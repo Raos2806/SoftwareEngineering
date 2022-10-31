@@ -27,6 +27,7 @@ tbd
 
 ## 2.2 Alternative Flows
 - User tries to perform actions prohibited by the game (e.g. walk through walls)
+- 
 # 3. Special Requirements
 n/a
 
@@ -34,19 +35,12 @@ n/a
 The preconditions for this use case are:
 1. The user has started the App
 2. The user has started a level
-3. 
+
 # 5. Postconditions
-The postconditions for this use case are:
-1. The session gets posted on the session overview page
-2. The players participating index is incremented (session creator is the first person)
+n/a
 
-### 5.1 Save changes / Sync with server
+# 6. Effort
 
-If a session gets posted it needs to get synced with the server, so that every user can see the session.
+Effort: High
+Requires by far the most effort. Basic framework of the game, the movement of the character and the design of the levels are all necessary in order to be able to play the game.
 
-
-# 6. Function Points
-![Function Points UC1_Post_Session](../function_points/UC1_Posting.png)
-<img src="../function_points/Blue_print.png" alt="Function Points Blue_Print" width="500"/>
-
-Total number of function points: 13.09
