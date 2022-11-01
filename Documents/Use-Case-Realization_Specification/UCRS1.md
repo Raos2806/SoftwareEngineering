@@ -7,7 +7,7 @@
   - [Scope](#12-scope)
   - [Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
   - [References](#14-references)
-- [Flow of Events - Design](#2-flow-of-events-design)
+- [Flow of Events](#2-flow-of-events)
 
 ## 1. Introduction
 
@@ -31,7 +31,7 @@ The use-cases of this document are influenced by the UML guidelines.
 
 n/a
 
-## 2. Flow of Events - Design
+## 2. Flow of Events
 
 ![UCRS](../Pictures/sequencediagram1.drawio.png)
 
