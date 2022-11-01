@@ -4,7 +4,7 @@
 
 ## 1.1 Brief Description
 The main menu is the first thing you can interact with in our game. From here, you can go to the settings, view the credits or make your way to the levels and play the game. 
--
+
 ## 1.2 Mockup 
 tbd
 
