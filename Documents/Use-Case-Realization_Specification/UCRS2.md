@@ -13,7 +13,7 @@
 
 ### 1.1 Purpose
 
-This Use-Case-Realization Specification describes the implementation of selecting a level to play.
+This Use-Case-Realization Specification describes the implementation after the game has ended.
 
 ### 1.2 Scope
 
@@ -35,6 +35,6 @@ n/a
 
 ![UCRS](../Pictures/sequence_diagram2.png)
 
-As seen in the above sequence diagram, the first step is to launch the application on your device.
-The main menu screen will contain buttons to navigate through the app. By tapping the play button, the user will be able to enter the level selection.
-At this point, the application will check the data storage to make only the previously unlocked levels available to play. By tapping an eligible level, the user can start playing said level.
+The above sequence diagram shows what happens after the game has ended.
+The game ends by either succeeding or failing the level that has been selected. This will save the game automatically.
+At this point the application will check the data storage to save the current progress of the user. The application will then show a message that tells the User whether the progress could be saved.
