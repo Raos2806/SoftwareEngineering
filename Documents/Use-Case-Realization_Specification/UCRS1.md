@@ -5,9 +5,9 @@
 - [Introduction](#1-introduction)
   - [Purpose](#11-purpose)
   - [Scope](#12-scope)
-  - [Definitions, Acronyms and Abbreviations](#13-definitions,_acronyms_and_abbreviations)
+  - [Definitions, Acronyms and Abbreviations](#13-definitions-acronyms-and-abbreviations)
   - [References](#14-references)
-- [Flow of Events - Design](#2-flow_of_events_-_design)
+- [Flow of Events - Design](#2-flow-of-events-design)
 
 ## 1. Introduction
 
