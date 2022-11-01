@@ -7,7 +7,7 @@
   - [Scope](#12-scope)
   - [Definitions, Acronyms and Abbreviations](#13-definitions)
   - [References](#14-references)
-- [Flow of Events-Design](#2-FoE)
+- [Flow of Events-Design](#2-flow_of_events_-_design)
 
 ## 1. Introduction
 
