@@ -20,7 +20,7 @@ tbd
 - now you can play the best jump and run game in the world
 
 ### Activity Diagram
-![Activity Diagram](../Pictures/AD_main_menu.drawio.svg)
+![Activity Diagram](../Pictures/AD5_main_menu.drawio.svg)
 
 
 ## 2.2 Alternative Flows
