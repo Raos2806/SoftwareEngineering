@@ -20,7 +20,7 @@ tbd
 - User is able to change settings
 
 ### Activity Diagram
-![Activity Diagram](../Documents/Pictures/AD4_settings.drawio.svg)
+![Activity Diagram](../Pictures/AD4_settings.drawio.svg)
 
 
 ## 2.2 Alternative Flows
