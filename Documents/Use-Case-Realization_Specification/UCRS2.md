@@ -1,4 +1,4 @@
-# Use-Case-Realization Specification 1: Selecting a level to play
+# Use-Case-Realization Specification 2: Selecting a level to play
 
 ## Table of contents
 - [Table of contents](#table-of-contents)
