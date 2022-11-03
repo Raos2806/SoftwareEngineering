@@ -127,12 +127,12 @@ Change settings that directly affect the game.
 
 [Configure settings](./use_cases/UC4_configure_settings.md)
 
-#### 3.1.4 Main menu
+#### 3.1.5 Main menu
 The first screen you see after starting the application.
 
 [Main menu](./use_cases/UC5_main_menu.md)
 
-#### 3.1.4 In-game menu
+#### 3.1.6 In-game menu
 Pause the game and either quit, resume or open settings.
 
 [In-game menu](./use_cases/UC6_ingame_menu.md)
