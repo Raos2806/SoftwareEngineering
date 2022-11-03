@@ -127,6 +127,16 @@ Change settings that directly affect the game.
 
 [Configure settings](./use_cases/UC4_configure_settings.md)
 
+#### 3.1.4 Main menu
+The first screen you see after starting the application.
+
+[Main menu](./use_cases/UC5_main_menu.md)
+
+#### 3.1.4 In-game menu
+Pause the game and either quit, resume or open settings.
+
+[In-game menu](./use_cases/UC6_ingame_menu.md)
+
 
 ### 3.2 Usability
 We plan on designing the user interface as intuitive and self-explanatory as possible to make the user feel as comfortable as possible using the app. There will be a tutorial to learn the basics of the game.
