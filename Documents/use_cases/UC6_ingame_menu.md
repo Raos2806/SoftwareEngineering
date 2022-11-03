@@ -2,16 +2,16 @@
 
 # 1. Ingame Menu
 
-## 1.1 Brief Description
+### 1.1 Brief Description
 This use case is about the ingame Menu which shows up when the Player (user) pushes the  button "Settings.png". The button shows up while being in a level and locates in the top right corner of the screen. After pressing the button the level will pause and 3 (in the future maybe more) buttons will show up:
 - "Resume"
 - "Settings"
 - "Give Up"
 
-## 1.1.1 Resume
+### 1.1.1 Resume
 Once pressed the "Resume" button the level will unpause and the Player can continue to play.
 
-## 1.1.2 Settings
+### 1.1.2 Settings
 Once pressed the "Settings" button the use case "UC4_configure_settings" will be execeuted.
 
 ## 1.1.3 Give Up
