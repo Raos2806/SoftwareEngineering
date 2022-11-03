@@ -29,7 +29,7 @@ tbd
 - User presses Button "Settings.png"
 
 ### Activity Diagram
-tbd
+![ingame menu](../Pictures/AD5_ingame_menu.drawio.svg)
 
 ## 2.2 Alternative Flows
 n/a
