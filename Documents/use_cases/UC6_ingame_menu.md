@@ -8,13 +8,13 @@ This use case is about the ingame Menu which shows up when the Player (user) pus
 - "Settings"
 - "Give Up"
 
-##1.1.1 Resume
+## 1.1.1 Resume
 Once pressed the "Resume" button the level will unpause and the Player can continue to play.
 
-##1.1.2 Settings
+## 1.1.2 Settings
 Once pressed the "Settings" button the use case "UC4_configure_settings" will be execeuted.
 
-##1.1.3 Give Up
+## 1.1.3 Give Up
 Once pressed the "Give Up" button the use case "UC3_leave_game" will be executed.
 
 ## 1.2 Mockup 
