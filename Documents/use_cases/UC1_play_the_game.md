@@ -22,7 +22,7 @@ tbd
 - User either manages to overcome all obstacles or takes damage/ fails the level
 
 ### Activity Diagram
-![Activity Diagram](../activity_diagrams/UCD1_Post_Session.png)
+tbd
 
 
 ## 2.2 Alternative Flows
