@@ -79,26 +79,14 @@ n/a
 ## 5. Logical View
 
 ### 5.1 Overview
-The logical view for our application follows the Spring Boot architecture and looks like:
-![Spring Boot Backend](./SAD_images/spring_boot_logical_view.PNG)  
-In our specific case the view however is not part of spring but provided separately as an android front end.
-The android application handles all the user interaction and independently handles the view coordnation thus fulfilling the roles of view and dispatcher alike. However view and dispatcher do not interact with the client independently instead the dispatcher has been substituted by the ViewModel which connects the view and the model as describe above as well as forming the connection to the controller.
-However the frontend does not interact with the model itself. Model classes are duplicated into the fronted for consistency reasons but are only used to populate the corresponding views.
-Any actual manipulation of the model is handled by the backend.
-
 
 ### 5.2 Architecturally Significant Design Packages
-On this section you can find our class diagrams for the front end and the back end. We have clearly marked which parts fulfill the model, the view and the controller tasks.
-
-Here is the class diagram for the back end. As the backend has no view part we only highlighted the model and the controller parts.
-![MVC Class Diagram Backend](./SAD_images/backend_class_diagram_mvc.png)
-
-Here is the class diagram for the front end. The Frontend consists of the view, the ViewModel, and duplicated domain specific classes from the back end (model).
-![MVC Class Diagram Frontend](./SAD_images/frontend_class_diagram_mvc.png)
-
 
 ## 6. Process View
-n/a
+
+.[Use case realization specification 1:](./UCRS/UCRS1.md)
+.[Use case realization specification 2:](./UCRS/UCRS2.md)
+
 
 ## 7. Deployment View
 Here you can see our deployement view diagram:
