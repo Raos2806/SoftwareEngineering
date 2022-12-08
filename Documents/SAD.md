@@ -68,8 +68,10 @@ as the logical, deployment, implementation and data views.
 
 ![ARS_table](./Pictures/ARS_table.png)
 
+This is our ARS table. Our main goal for users is to provide a smooth and fun gaming experience. For the developers, our main goal
+
 ## 4. Use-Case View
-![Overall-Use-Case-Diagram](./UseCaseDiagramCP.png)
+![Overall-Use-Case-Diagram](./UseCaseDiagramm.png)
 
 ### 4.1 Use-Case Realizations
 n/a
