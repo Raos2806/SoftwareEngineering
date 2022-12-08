@@ -84,8 +84,8 @@ n/a
 
 ## 6. Process View
 
-.[Use case realization specification 1:](./UCRS/UCRS1.md)
-.[Use case realization specification 2:](./UCRS/UCRS2.md)
+Use case realization specification 1: [UCRS 1](./UCRS/UCRS1.md)
+Use case realization specification 2: [UCRS 2](./UCRS/UCRS2.md)
 
 
 ## 7. Deployment View
