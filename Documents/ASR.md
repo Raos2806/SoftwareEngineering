@@ -2,7 +2,9 @@
 
 ## 1. Utility tree
 
-Here you can get access to our ![ASR table](./Pictures/ASR_table.png)
+Here's our ASR table:
+
+![ASR table](./Pictures/ASR_table.png)
 
 ## 2. Architecture decisions and Concrete design patterns
 
