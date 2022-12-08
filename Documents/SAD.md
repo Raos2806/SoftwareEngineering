@@ -66,7 +66,7 @@ as the logical, deployment, implementation and data views.
 
 ## 3. Architectural Goals and Constraints
 
-[Architecture Significant Requirements](./ARS.md)
+[Architecture Significant Requirements](./ASR.md)
 
 ## 4. Use-Case View
 ![Overall-Use-Case-Diagram](./Pictures/UseCaseDiagramm.png)
