@@ -64,6 +64,17 @@ as the logical, deployment, implementation and data views.
 
 ## 2. Architectural Representation
 
+This section describes the software architecture of our current system, and how it is represented in different views:
+
+Use-Case View:
+- Our game is divided into 4 essential sections: main menu, level selection, settings and playing a level.
+
+Logical View:
+- The program consists mainly of 4 subsystems named after their classes: Player, Scene, Camera and Tileset.
+
+Deployment View:
+- Our game only requires a client.
+
 ## 3. Architectural Goals and Constraints
 
 [Architecture Significant Requirements](./ASR.md)
@@ -72,15 +83,8 @@ as the logical, deployment, implementation and data views.
 ![Overall-Use-Case-Diagram](./Pictures/UseCaseDiagramm.png)
 
 ### 4.1 Use-Case Realizations
-n/a
 
-## 5. Logical View
-
-### 5.1 Overview
-n/a
-### 5.2 Architecturally Significant Design Packages
-n/a
-## 6. Process View
+After starting the application, the user can either open and adjust the settings of the game, quit the game or enter the level selection of the game. For starters, the user only has access to one level and has to unlock following levels by completing the previous ones.
 
 Use case realization specification 1: 
 [UCRS 1](./UCRS/UCRS1.md)
@@ -88,23 +92,39 @@ Use case realization specification 1:
 Use case realization specification 2: 
 [UCRS 2](./UCRS/UCRS2.md)
 
+## 5. Logical View
+
+### 5.1 Overview
+ 
+The program consists mainly of 4 subsystems named after their classes: Player, Scene, Camera and Tileset.
+The player subsystem contains all the necessary background processes for the player to move, be animated and have a collision. Each scene contains a different level (or sometimes parts of a level). The camera captures the parts of the game that are displayed to the user. The tileset is used to create objects that have a collision and are the basis of the creation of levels.
+
+### 5.2 Architecturally Significant Design Packages
+
+In this section you can find our class diagram:
+
+![Class-Diagram](./Pictures/uml_class_diagramm.png)
+
+## 6. Process View
+
+The first process is called when the user launches the game. The user is then able to select a level. At this point, the checkLevel process is called. It verifies which levels have been unlocked through the data storage and displays them to the user, who can then choose one and start it.
+
 
 ## 7. Deployment View
-n/a
 
+To play the game, the user only needs a client with (preferably the current) version of the game. After running the application, he can access the settings or the level selection.
 ## 8. Implementation View
 n/a
 ### 8.1 Overview
 n/a
 ### 8.2 Layers
 n/a
-
 ## 9. Data View
-
 n/a
 ## 10. Size and Performance
-n/a
 
+As of right now, the application is intended to serve one user per client. As anyone can download the application, the number of clients is unlimited. We may add a multiplayer feature in the future.
+In terms of performance we try to create a smooth user experience following clean code standards 
 ## 11. Quality/Metrics
 
 We thought that our game will grow significantly in the future. For example more levels or game elements.
