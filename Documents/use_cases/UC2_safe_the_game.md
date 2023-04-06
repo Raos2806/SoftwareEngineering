@@ -1,10 +1,10 @@
-# Use-Case Specification: Safe the game
+# Use-Case Specification: Save the game
 
-# 1. Safe the game
+# 1. Save the game
 
 ## 1.1 Brief Description
-Safe the progress you make throughout the game. While the player cannot actively safe progress, this is still one of the essential processes of the application.
-The game will automatically safe after the completion of each level.
+Save the progress you make throughout the game. While the player cannot actively save progress, this is still one of the essential processes of the application.
+The game will automatically save after the completion of each level.
 
 ## 1.2 Mockup 
 tbd
