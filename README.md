@@ -11,7 +11,7 @@ If you are new to our GitHub, here is a little oversight:
 [SAD](https://github.com/Raos2806/UltimateRecipeHunter/blob/main/Documents/SAD.md)                                                                      
 [SRS](https://github.com/Raos2806/UltimateRecipeHunter/blob/main/Documents/SRS.md)  
 [Risk Management](https://github.com/Raos2806/UltimateRecipeHunter/blob/main/Documents/Risk_Management.png)  
-[Risk Management (Excel Sheet)](https://github.com/Raos2806/UltimateRecipeHunter/blob/main/Documents/Risk_Management.xls)  
+[Risk Management (Excel Sheet)](https://github.com/Raos2806/UltimateRecipeHunter/blob/main/Documents/Risk_Management.xlsx)  
 If you want to explore our project by yourself, just browse the [Documents](https://github.com/Raos2806/UltimateRecipeHunter/tree/main/Documents) folder.
   
 We post weekly updates and news in our [blog](https://discord.com/channels/1005787157622964295/1028321086921789471).
