@@ -1,0 +1,64 @@
+extends Path2D
+@onready var follow = $PathFollow2D
+
+@export var move_rate = 200
+@export var ping_pong = false
+@export var loop = true
+@export var forward = true
+@export var start_wait_time: float = 0.0
+@export var end_wait_time: float = 0.0
+@export var slowdown = 1.0
+@export var power = 12
+@export var min_slowdown = 0.05
+@export var debug = false
+
+var waiting = false
+
+func _ready():
+	$Platform.position = follow.position
+	$Start_Timer.wait_time = start_wait_time
+	$End_Timer.wait_time = end_wait_time
+	
+	if start_wait_time > 0:
+		waiting = true
+		$Start_Timer.start()
+		
+	
+	follow.loop = loop
+	
+	if forward:
+		follow.progress_ratio = 0.0
+	else:
+		follow.progress_ratio = 1.0
+
+func _physics_process(delta):
+	
+	if not waiting:
+		slowdown = clamp((1 - pow((2 * follow.progress_ratio - 1), power)), min_slowdown, 1.0)
+		
+		if forward:
+			follow.progress += move_rate * delta * slowdown
+		else:
+			follow.progress -= move_rate * delta * slowdown
+		
+		if ping_pong:
+			if follow.progress_ratio >= 1:
+				waiting = true
+				$End_Timer.start()
+				forward = false
+			if follow.progress_ratio <= 0:
+				waiting = true
+				$Start_Timer.start()
+				forward = true
+				
+		if debug:
+			print(follow.progress_ratio)
+			
+		get_child(-1).position = follow.position
+
+
+func _on_start_timer_timeout():
+	waiting = false
+
+func _on_end_timer_timeout():
+	waiting = false

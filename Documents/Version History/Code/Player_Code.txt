@@ -1,0 +1,53 @@
+class_name Player
+extends CharacterBody2D
+
+@export var speed: float = 300.0
+@export var jump_velocity: float = -400.0
+@export var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity") #Standartmäßig: 980
+@export var start_fall_dmg: int = 800
+@export var end_fall_dmg: int = 2400
+@export var damage_reduction: float = 0
+
+var can_jump: bool = true
+var current_fall_dmg: float = 0
+var walljump: bool = false
+var live: float = 100.0
+var hold: int = 0
+var can_move = true
+
+func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		if velocity.y > start_fall_dmg:
+			current_fall_dmg = (velocity.y - start_fall_dmg) / (end_fall_dmg - start_fall_dmg)
+			print(current_fall_dmg)
+	else:
+		walljump = false
+		live -= current_fall_dmg * 100
+		current_fall_dmg = 0
+	
+	if can_move:
+		
+		if Input.is_action_pressed("Reset"):
+			hold += 1
+			if hold >= 120:
+				get_parent().ded()
+				hold = 0
+		else:
+			hold = 0
+	
+		if Input.is_action_pressed("Jump") and can_jump:
+			if is_on_floor():
+				velocity.y = jump_velocity
+			elif is_on_wall_only() and not walljump:
+				velocity.y = jump_velocity
+				walljump = true
+		
+	var direction = Input.get_axis("Move_L", "Move_R")
+	if direction and can_move:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+	
+	move_and_slide()
+
