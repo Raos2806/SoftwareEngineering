@@ -1,41 +1,37 @@
 extends Path2D
 @onready var follow = $PathFollow2D
 
+@export var autostart = false
 @export var move_rate = 200
 @export var ping_pong = false
 @export var loop = true
 @export var forward = true
 @export var start_wait_time: float = 0.0
 @export var end_wait_time: float = 0.0
+@export var stop_time: float = 0.0
+@export var wait_then_stop: float = 0.0
 @export var slowdown = 1.0
 @export var power = 12
 @export var min_slowdown = 0.05
+@export var start_progress_ratio: float = 0.0
 @export var debug = false
 
 var waiting = false
+var start = false
 
 func _ready():
+	follow.progress_ratio = start_progress_ratio
 	$Platform.position = follow.position
-	$Start_Timer.wait_time = start_wait_time
-	$End_Timer.wait_time = end_wait_time
-	
-	if start_wait_time > 0:
-		waiting = true
-		$Start_Timer.start()
-		
-	
 	follow.loop = loop
 	
-	if forward:
-		follow.progress_ratio = 0.0
-	else:
-		follow.progress_ratio = 1.0
-
+	if autostart:
+		start_platform()
+	
 func _physics_process(delta):
 	
-	if not waiting:
+	if not waiting and start:
 		slowdown = clamp((1 - pow((2 * follow.progress_ratio - 1), power)), min_slowdown, 1.0)
-		
+
 		if forward:
 			follow.progress += move_rate * delta * slowdown
 		else:
@@ -43,22 +39,55 @@ func _physics_process(delta):
 		
 		if ping_pong:
 			if follow.progress_ratio >= 1:
-				waiting = true
-				$End_Timer.start()
+				if end_wait_time >= 0.1:
+					waiting = true
+					$End_Timer.start()
 				forward = false
 			if follow.progress_ratio <= 0:
-				waiting = true
-				$Start_Timer.start()
+				if start_wait_time >= 0.1:
+					waiting = true
+					$Start_Timer.start()
 				forward = true
-				
+		
 		if debug:
-			print(follow.progress_ratio)
+			print(follow.progress)
 			
 		get_child(-1).position = follow.position
 
+func start_platform():
+	if end_wait_time >= 0.1:
+		$End_Timer.wait_time = end_wait_time
+	
+	if start_wait_time >= 0.1:
+		waiting = true
+		$Start_Timer.wait_time = start_wait_time
+		$Start_Timer.start()
+	
+	if stop_time >= 0.1 and wait_then_stop >= 0.1:
+		waiting = true
+		$Wait_Timer.wait_time = stop_time
+		$Wait_Then_Stop_Timer.wait_time = wait_then_stop
+		$Wait_Timer.start()
+		
+	start = true
 
+#Start/End Stop_Timer
 func _on_start_timer_timeout():
 	waiting = false
-
+	print("gzhbjn")
 func _on_end_timer_timeout():
 	waiting = false
+	print("gzhbjn")
+#Stop_Timer
+func _on_wait_timer_timeout():
+	if $Start_Timer.is_stopped() and $End_Timer.is_stopped():
+		waiting = false
+		$Wait_Then_Stop_Timer.start()
+	else:
+		$Wait_Timer.start()
+	
+	
+func _on_wait_then_stop_timer_timeout():
+	waiting = true
+	$Wait_Timer.start()
+	
