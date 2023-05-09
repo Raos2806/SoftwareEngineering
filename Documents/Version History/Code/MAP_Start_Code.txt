@@ -10,8 +10,10 @@ func checkpoint_reached(checkpoint: int)->void:
 	current_spawnpoint = get_node("Checkpoint" + str(checkpoint)).position
 	print(current_spawnpoint)
 
-func ded():
+func ded(reason: String):
+	$Player.respawn()
 	$Player.position = current_spawnpoint
+	print(reason)
 
 func _process(delta):
 	pass
