@@ -15,14 +15,19 @@ extends Path2D
 @export var min_slowdown = 0.05
 @export var start_progress_ratio: float = 0.0
 @export var debug = false
+@export var animation = false
 
 var waiting = false
 var start = false
+var start_move = false
 
 func _ready():
 	follow.progress_ratio = start_progress_ratio
 	$Platform.position = follow.position
-	follow.loop = loop
+	follow.loop = false
+	
+	if animation:
+		$Platform.playAnimation("disabled")
 	
 	if autostart:
 		start_platform()
@@ -31,26 +36,50 @@ func _physics_process(delta):
 	
 	if not waiting and start:
 		slowdown = clamp((1 - pow((2 * follow.progress_ratio - 1), power)), min_slowdown, 1.0)
-
+		if debug:
+			print(follow.progress_ratio)
 		if forward:
 			follow.progress += move_rate * delta * slowdown
+			if animation and not start_move:
+				$Platform.playAnimation("forward")
+				start_move = true
 		else:
 			follow.progress -= move_rate * delta * slowdown
+			if animation and not start_move:
+				$Platform.playAnimation("backward")
+				start_move = true
 		
 		if ping_pong:
+			if follow.progress_ratio >= 1.0:
+				if animation and not ping_pong and not loop and forward:
+					$Platform.playAnimation("disabled")
+				elif animation:
+					$Platform.playAnimation("default")
+
+				if end_wait_time >= 0.1:
+					waiting = true
+					$End_Timer.start()
+					
+				forward = false
+				
+			if follow.progress_ratio <= 0.0:
+				if animation and not ping_pong and not loop and not forward:
+					$Platform.playAnimation("disabled")
+				elif animation:
+					$Platform.playAnimation("default")
+
+				if start_wait_time >= 0.1:
+					waiting = true
+					$Start_Timer.start()
+
+				forward = true
+		elif loop:
 			if follow.progress_ratio >= 1:
 				if end_wait_time >= 0.1:
 					waiting = true
 					$End_Timer.start()
-				forward = false
-			if follow.progress_ratio <= 0:
-				if start_wait_time >= 0.1:
-					waiting = true
-					$Start_Timer.start()
-				forward = true
-		
-		if debug:
-			print(follow.progress)
+				else:
+					follow.progress = 0
 			
 		get_child(-1).position = follow.position
 
@@ -68,26 +97,38 @@ func start_platform():
 		$Wait_Timer.wait_time = stop_time
 		$Wait_Then_Stop_Timer.wait_time = wait_then_stop
 		$Wait_Timer.start()
-		
+	
+	$Platform.playAnimation("default")
 	start = true
 
 #Start/End Stop_Timer
 func _on_start_timer_timeout():
 	waiting = false
-	print("gzhbjn")
+	start_move = false
+	
 func _on_end_timer_timeout():
 	waiting = false
-	print("gzhbjn")
+	start_move = false
+	if loop:
+		follow.progress = 0
+		get_child(-1).position = follow.position
+		if start_wait_time >= 0.1:
+			waiting = true
+			$Start_Timer.start()
+	
+		
 #Stop_Timer
 func _on_wait_timer_timeout():
 	if $Start_Timer.is_stopped() and $End_Timer.is_stopped():
+		if animation:
+			start_move = false
 		waiting = false
 		$Wait_Then_Stop_Timer.start()
 	else:
 		$Wait_Timer.start()
 	
-	
 func _on_wait_then_stop_timer_timeout():
+	if animation:
+		$Platform.playAnimation("default")
 	waiting = true
 	$Wait_Timer.start()
-	
