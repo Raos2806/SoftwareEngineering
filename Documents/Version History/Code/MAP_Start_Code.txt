@@ -15,14 +15,17 @@ func checkpoint_reached(checkpoint: int)->void:
 
 func ded(reason: String):
 	$Player.respawn()
+	#da halt warten, bis kamera ankommt....ka, wie xD
 	$Player.position = current_spawnpoint
+	#$Player.velocity.y = -200 für respawn-animation
 	print(reason)
+	$Player.can_move = true
 
 func lose():
-	print("You Lose!")	 #scene on top packen(sichtbar machen, wo dann ergebnis gelabeled wird...oder ne neue node machen, aber kp wie xD die muss ja on-top gerendert werden)
+	print("You Lose!")	#scene on top packen(sichtbar machen, wo dann ergebnis gelabeled wird...oder ne neue node machen, aber kp wie xD die muss ja on-top gerendert werden)
 
 func win():
-	print("You Win!")		#hier das gleiche, wie bei lose
+	print("You Win!")	#hier das gleiche, wie bei lose
 
 func _process(delta):
 	pass
