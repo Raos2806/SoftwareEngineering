@@ -2,13 +2,15 @@ class_name Player
 extends CharacterBody2D
 
 @export var speed: float = 300.0
-@export var jump_velocity: float = -400.0
+@export var jump_velocity: float = -350.0
+@export var wall_boost: float = -50.0
 @export var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity") #Standartmäßig: 980
 @export var start_fall_dmg: int = 800
 @export var end_fall_dmg: int = 2400
 @export var damage_reduction: float = 0.0
 @export var start_live: float = 100.0
 @export var start_attempts: int = 5
+
 
 var can_jump: bool = true
 var can_double_jump: bool = true
@@ -19,6 +21,7 @@ var can_move = true
 var live = start_live
 var attempts = start_attempts
 
+var grip: float = 1.0
 var jump_boost: float = 1.0
 var velocity_boost: float = 1.0
 var max_fall_speed: float = 100
@@ -52,14 +55,14 @@ func _physics_process(delta):
 			if is_on_floor() and can_jump:
 				velocity.y = jump_velocity
 			elif is_on_wall_only() and can_double_jump and not walljump:
-				velocity.y = jump_velocity
+				velocity.y = jump_velocity + wall_boost
 				walljump = true
 		
 	var direction = Input.get_axis("Move_L", "Move_R")
 	if direction and can_move:
-		velocity.x = direction * speed
+		velocity.x = direction * speed	#move_toward(velocity.x, direction * speed, pow(velocity.x, 2) + 1)
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, speed/8 * grip)
 	
 	move_and_slide()
 
@@ -69,6 +72,7 @@ func get_damage(reason: String, damage: float)->void:
 	print(live)
 	
 func respawn()->void:
+	can_move = false
 	current_fall_dmg = 0
 	attempts -= 1
 	if attempts <= 0:
